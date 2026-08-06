@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pro To-Do App</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body id="body" class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+<div id="container" class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md">
+
+<h1 class="text-2xl font-bold text-center mb-4">🔥 Pro To-Do</h1>
+
+<!-- Dark Mode -->
+<button onclick="toggleDark()" class="w-full mb-3 bg-black text-white p-2 rounded">
+Toggle Dark Mode
+</button>
+
+<!-- Input -->
+<input id="taskInput" type="text" placeholder="Enter task"
+class="border p-2 w-full mb-2 rounded">
+
+<input id="dateInput" type="datetime-local"
+class="border p-2 w-full mb-2 rounded">
+
+<button onclick="addTask()" class="bg-blue-500 text-white w-full p-2 rounded mb-3">
+Add Task
+</button>
+
+<!-- Progress -->
+<div class="w-full bg-gray-200 rounded mb-3">
+<div id="progressBar" class="bg-green-500 text-xs text-white text-center rounded" style="width:0%">0%</div>
+</div>
+
+<!-- Clear All -->
+<button onclick="clearAll()" class="bg-red-500 text-white w-full p-2 rounded mb-3">
+Clear All
+</button>
+
+<!-- List -->
+<ul id="taskList"></ul>
+
+</div>
+
+<script>
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let darkMode = localStorage.getItem("dark") === "true";
+
+// Apply saved dark mode
+if(darkMode) toggleDark();
+
+function save(){
+localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function addTask(){
+let text = document.getElementById("taskInput").value.trim();
+let date = document.getElementById("dateInput").value;
+
+if(text===""){
+alert("Enter task");
+return;
+}
+
+tasks.push({
+text,
+date,
+completed:false
+});
+
+document.getElementById("taskInput").value="";
+document.getElementById("dateInput").value="";
+
+save();
+render();
+}
+
+function deleteTask(i){
+tasks.splice(i,1);
+save();
+render();
+}
+
+function toggleTask(i){
+tasks[i].completed = !tasks[i].completed;
+save();
+render();
+}
+
+function clearAll(){
+if(confirm("Delete all tasks?")){
+tasks=[];
+save();
+render();
+}
+}
+
+function render(){
+let list = document.getElementById("taskList");
+list.innerHTML="";
+
+tasks.forEach((t,i)=>{
+let li = document.createElement("li");
+li.className="bg-gray-100 p-3 mb-2 rounded";
+
+li.innerHTML=`
+<div class="flex justify-between">
+<span onclick="toggleTask(${i})"
+class="${t.completed ? 'line-through text-gray-500' : ''}">
+${t.text}
+</span>
+
+<button onclick="deleteTask(${i})" class="text-red-500">X</button>
+</div>
+
+<p class="text-xs text-gray-500">${t.date ? "Due: "+t.date : ""}</p>
+`;
+
+list.appendChild(li);
+
+// Reminder Alert
+if(t.date && !t.completed){
+let now = new Date().getTime();
+let due = new Date(t.date).getTime();
+
+if(due < now){
+alert("⏰ Task Overdue: " + t.text);
+}
+}
+});
+
+// Progress Bar
+let completed = tasks.filter(t=>t.completed).length;
+let percent = tasks.length ? (completed/tasks.length)*100 : 0;
+
+let bar = document.getElementById("progressBar");
+bar.style.width = percent + "%";
+bar.innerText = Math.round(percent) + "%";
+}
+
+// Dark Mode
+function toggleDark(){
+let body = document.getElementById("body");
+let container = document.getElementById("container");
+
+body.classList.toggle("bg-gray-900");
+container.classList.toggle("bg-gray-800");
+container.classList.toggle("text-white");
+
+darkMode = !darkMode;
+localStorage.setItem("dark", darkMode);
+}
+
+render();
+</script>
+
+</body>
+</html>
