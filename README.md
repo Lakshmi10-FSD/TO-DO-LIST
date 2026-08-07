@@ -6,3 +6,9 @@ The To-Do List application is a simple and efficient task management system deve
  such as task filtering , search functionality, due date tracking, and a progress bar are implemented to enhance user experience. The application also includes dark mode support and uses local Storage to save tasks, ensuring data persistence even after refreshing the page.
 
 This project demonstrates strong understanding of front-end development concepts, including event handling, state management, and responsive design. It highlights the ability to build interactive and user-friendly web applications with real-world usability.
+
+• Enhanced user experience by implementing dark mode, responsive design, and local storage for seamless data persistence across sessions.
+
+• Integrated deadline tracking with overdue alerts and real-time statistics to monitor completed and pending tasks efficiently.
+
+• Designed a clean and intuitive UI with smooth interactions, showcasing strong frontend development and problem-solving skills.
