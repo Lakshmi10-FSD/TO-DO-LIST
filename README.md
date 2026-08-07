@@ -4,7 +4,7 @@ The To-Do List application is a simple and efficient task management system deve
 
 # ✨ Features:
 
-✅ Add, edit, and delete tasks
+✅ Add, edit, and delete tasks<br>
 🔍 Search and filter tasks
 📅 Due date and time tracking
 ⏰ Overdue alerts for missed tasks
