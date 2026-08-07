@@ -7,8 +7,6 @@ The To-Do List application is a simple and efficient task management system deve
 
 This project demonstrates strong understanding of front-end development concepts, including event handling, state management, and responsive design. It highlights the ability to build interactive and user-friendly web applications with real-world usability.
 
-• Enhanced user experience by implementing dark mode, responsive design, and local storage for seamless data persistence across sessions.
+Enhanced user experience by implementing dark mode, responsive design, and local storage for seamless data persistence across sessions. Integrated deadline tracking with overdue alerts and real-time statistics to monitor completed and pending tasks efficiently.
 
-• Integrated deadline tracking with overdue alerts and real-time statistics to monitor completed and pending tasks efficiently.
-
-• Designed a clean and intuitive UI with smooth interactions, showcasing strong frontend development and problem-solving skills.
+Designed a clean and intuitive UI with smooth interactions, showcasing strong frontend development and problem-solving skills.Designed a dynamic progress bar to visually represent task completion status, improving user engagement. Added functionality to mark all tasks as completed and clear completed tasks for better task management.
