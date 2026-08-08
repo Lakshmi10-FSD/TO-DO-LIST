@@ -17,7 +17,7 @@ The To-Do List application is a simple and efficient task management system deve
 # 🛠️ Tech Stack:
 • HTML5<br>
 • Tailwind CSS<br>
-• JavaScript (Vanilla JS)<br>
+• JavaScript <br>
 
 # 💡 Future Improvements:
 🔔 Browser notifications<br>
