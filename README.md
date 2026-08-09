@@ -4,7 +4,7 @@ The Smart To-Do List is a modern and user-friendly task management application b
 This application leverages the power of **JavaScript** for dynamic functionality and DOM manipulation, while **Tailwind CSS** ensures a clean, responsive, and visually appealing user interface.
 
 ## ✨ Key Features
-✔️ Create, update, and delete tasks effortlessly
+✔️ Create, update, and delete tasks effortlessly<br>
 🔍 Real-time search and filtering options
 📅 Task scheduling with date & time tracking
 ⏰ Automatic overdue alerts for missed deadlines
