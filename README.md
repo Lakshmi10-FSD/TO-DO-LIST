@@ -21,7 +21,7 @@ This application leverages the power of **JavaScript** for dynamic functionality
 * Tailwind CSS
 * JavaScript
 
-## 💡 Future Enhancements:
+##  Future Enhancements:
 🔔 Browser-based notifications and reminders
 ☁️ Cloud integration using Firebase
 📊 Advanced analytics dashboard for productivity insights
